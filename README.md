@@ -6,6 +6,7 @@ This example uses Docker Machine to spin up a DigitalOcean droplet Docker host a
 
 * Docker >= 1.7.0
 * Docker Machine >= 0.3.0
+* DigitalOcean account + credit
 
 ## Quick start
 
@@ -15,9 +16,9 @@ This example uses Docker Machine to spin up a DigitalOcean droplet Docker host a
 
 ## How does the script work?
 
-1. It uses Docker Machine to create a DigitalOcean droplet which runs the Docker host.
-1. It make a folder for the application on the remote host and copies it over using the ssh and scp Docker Machine commands.
-1. It configures the current shell environment so that Docker points to the host on the remote host.
-1. It uses Docker to run a node js container with the application mounted in it and exposing port 1337.
-1. It waits a few seconds for the container to start, then finds the remote host's IP address and curls port 1337.
-1. It stops and removes the container and finally destroys the Docker Machine, and in doing so - the DigitalOcean droplet.
+1. Uses Docker Machine to create a DigitalOcean droplet which runs the Docker host.
+1. Makes a folder for the app on the remote host and copies it over using the ssh and scp Docker Machine commands.
+1. Configures the current shell environment so that Docker points to the host on the remote host.
+1. Uses Docker to run a node js container with the application mounted in it and exposing port 1337.
+1. Waits a few seconds for the container to start, then finds the remote host's IP address and curls it on port 1337.
+1. Stops and removes the container and finally destroys the Docker Machine, and in doing so - the DigitalOcean droplet.
